@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { Http, HttpModule, Response } from "@angular/http";
 import { enableProdMode } from '@angular/core';
 enableProdMode();
 import { AppComponent } from './app.component';
@@ -8,7 +9,6 @@ import { AboutComponent } from './about/about.component';
 import { ResumeComponent } from './resume/resume.component';
 import { PortfolioComponent } from './portfolio/portfolio.component';
 import { BlogComponent } from './blog/blog.component';
-import { ContanctComponent } from './contanct/contanct.component';
 import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
@@ -19,13 +19,15 @@ import { ContactComponent } from './contact/contact.component';
     ResumeComponent,
     PortfolioComponent,
     BlogComponent,
-    ContanctComponent,
     ContactComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    { provide: "apiUrl", useValue: "http://ismailselcuk.com/api" }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

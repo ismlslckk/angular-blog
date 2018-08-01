@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
 
   homePageData:Home;
   ngOnInit() {
-    this.getHome();
+    //this.getHome();
   }
 
   getHome(){
